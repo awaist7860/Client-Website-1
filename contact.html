@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Book / Contact | YourBrand</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A clean, minimal starter website for a hybrid clinic + classes/membership business.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Go to homepage">
+      <span class="logo-mark">●</span>
+      <span class="logo-text">YourBrand</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      ☰
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="services.html">Services</a>
+      <a href="classes.html">Classes</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn btn-small">Book / Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main">
+  <section class="section">
+  <div class="container grid-2">
+    <div>
+      <h1>Book / Contact</h1>
+      <p class="lead">Use this page for booking links, a contact form, and clinic details.</p>
+
+      <div class="card">
+        <h2 class="h3">Book online</h2>
+        <p class="muted">Paste your booking system link here (Cliniko, Fresha, Calendly, etc.).</p>
+        <a class="btn" href="#" aria-label="Book online">Book now</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Contact details</h2>
+      <ul class="list">
+        <li><strong>Email:</strong> hello@yourbrand.co.uk</li>
+        <li><strong>Phone:</strong> 07xxx xxxxxx</li>
+        <li><strong>Location:</strong> Your clinic address</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2 class="h3">Send a message</h2>
+      <form id="contact-form" class="form" novalidate>
+        <label>
+          Name
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+
+        <button class="btn" type="submit">Send</button>
+        <p class="muted small" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="muted small">This starter form does not send emails by itself. See README for options.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2>FAQ</h2>
+    <details class="faq">
+      <summary>How quickly do you reply?</summary>
+      <p class="muted">Add your response time, e.g. within 1–2 business days.</p>
+    </details>
+    <details class="faq">
+      <summary>Do you accept insurance?</summary>
+      <p class="muted">List providers if applicable or explain payment policy.</p>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>YourBrand</strong>
+      <p class="muted">Women’s health physio • pregnancy • postnatal • pelvic health</p>
+    </div>
+
+    <div class="footer-links" aria-label="Footer links">
+      <a href="services.html">Services</a>
+      <a href="classes.html">Classes</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="muted small">
+      <p>© 2025 YourBrand. All rights reserved.</p>
+      <p><a href="#" aria-label="Privacy policy">Privacy</a> · <a href="#" aria-label="Terms">Terms</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
