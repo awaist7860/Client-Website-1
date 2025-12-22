@@ -8,17 +8,20 @@ html, body { height: 100%; }
 body { margin: 0; }
 
 /* Typography */
+/*Varaibles*/
 :root {
   /*--bg: #ffffff;*/
-  --bg: #660066;
-  --text: #121212;
+  --bg: #ffe6ff;
+  --text: #ff80ff;
+  --mainPage: #000000;
+  --black: #000000;
   --muted: #5b5b5b;
   --line: #e9e9e9;
-  --card: #3a3636;
+  --card: #ffccff;
   --alt: #fafafa;
   /*--btn: #121212;*/
-  --btn: #ff80ff;
-  --btnText: #ffffff;
+  --btn: #ffb3ff;
+  --btnText: #000;
   --radius: 14px;
   --shadow: 0 10px 30px rgba(0,0,0,0.06);
   --max: 1100px;
@@ -26,13 +29,13 @@ body { margin: 0; }
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  color: var(--text);
+  color: var(--black);
   background: var(--bg);
   line-height: 1.55;
 }
 
 h1, h2, h3 { line-height: 1.2; margin: 0 0 0.75rem; }
-h1 { font-size: clamp(2rem, 3.6vw, 3rem); }
+h1 { font-size: clamp(2rem, 3.6vw, 3rem); color: var(--mainPage)}
 h2 { font-size: clamp(1.4rem, 2.4vw, 2rem); }
 h3, .h3 { font-size: 1.15rem; }
 
@@ -47,11 +50,11 @@ a:hover { text-decoration: underline; }
 }
 
 .section { padding: 3.2rem 0; }
-.section.alt { background: var(--alt); }
+.section.alt { background: var(--bg); }
 .section.cta { padding: 2.5rem 0; }
 
-.lead { font-size: 1.1rem; }
-.eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; margin-bottom: 0.6rem; }
+.lead { font-size: 1.1rem; color: var(--black)}
+.eyebrow { color: var(--mainPage); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; margin-bottom: 0.6rem; }
 .muted { color: var(--muted); }
 .small { font-size: 0.9rem; }
 .sr-only {
@@ -88,6 +91,7 @@ a:hover { text-decoration: underline; }
   display: flex;
   align-items: center;
   gap: 1rem;
+  color: var(--black);
 }
 
 .nav-toggle {
@@ -119,7 +123,7 @@ a:hover { text-decoration: underline; }
 .btn-small { padding: 0.55rem 0.85rem; font-size: 0.95rem; }
 .btn-ghost {
   background: transparent;
-  color: var(--text);
+  color: var(--black);
   border: 1px solid var(--line);
 }
 
@@ -204,8 +208,8 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1.2rem;
-  background: #fff;
-  box-shadow: var(--shadow);
+  background: var(--bg);/* #fff;*/
+  /*box-shadow: var(--shadow);*/
 }
 
 /* FAQ */
