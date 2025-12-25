@@ -91,6 +91,33 @@ a:hover { text-decoration: underline; }
 .logo-mark { font-size: 1.2rem; }
 .logo-text { letter-spacing: 0.01em; }
 
+/* Logo as image */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 44px;     /* adjust if needed */
+  width: auto;
+  display: block;
+  border-radius: 10px; /* optional: matches your rounded UI */
+}
+
+/* Hover effect (similar “subtle UI” feel) */
+.logo:hover .logo-img {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.logo-img {
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -210,6 +237,35 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius);
   padding: 1.1rem;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-media {
+  margin-top: 0.9rem;
+  border-radius: calc(var(--radius) - 2px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+  margin-bottom: 1rem;
+}
+
+.card-media img {
+  display: block;
+  width: 100%;
+  height: 250px;           /* controls consistent image height */
+  object-fit: cover;       /* crops nicely instead of stretching */
+  object-position: center; /* keeps subject centered */
+  transition: transform 180ms ease;
+  
+}
+
+.card:hover .card-media img {
+  transform: scale(1.02);
+}
+
+.card .btn {
+  margin-top: auto; /* pushes button to bottom */
 }
 
 .hero-card { position: relative; }
@@ -305,7 +361,40 @@ input:focus, textarea:focus { outline: 2px solid rgba(0,0,0,0.12); }
 }
 .footer-links { display: grid; gap: 0.4rem; }
 
+/* Footer logo */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.footer-logo-img {
+  height: 48px; /* slightly bigger than header */
+  width: auto;
+  display: block;
+  border-radius: 12px;
+  transition: transform 160ms ease, opacity 160ms ease, box-shadow 160ms ease;
+}
+
+/* Hover effect */
+.footer-logo:hover .footer-logo-img {
+  transform: translateY(-1px);
+  opacity: 0.92;
+  box-shadow: var(--shadow);
+}
+
+
 /* Responsive */
+@media (min-width: 900px) {
+  .card-media img { height: 300px; }
+}
+
 @media (max-width: 900px) {
   .grid-2 { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
