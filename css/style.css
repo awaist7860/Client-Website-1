@@ -98,6 +98,10 @@ a:hover { text-decoration: underline; }
   padding: 0.4rem 0.7rem;
 }
 
+#pricing {
+  scroll-margin-top: 90px;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
