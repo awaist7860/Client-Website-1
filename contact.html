@@ -17,27 +17,6 @@
 </head>
 <body>
 
-<!--<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="Sit nostrud sint laboris proident consequat lorem enim occaecat voluptate.">
-      <span class="logo-mark">●</span>
-      <span class="logo-text">Ut Ullamco Voluptate</span>
-    </a>
-
-    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
-      <span class="sr-only">Tempor eu incididunt esse.</span>
-      ☰
-    </button>
-
-    <nav id="site-nav" class="site-nav" aria-label="Ea consectetur sunt laborum et eu.">
-      <a href="services.html">Services</a>
-      <a href="classes.html">Classes</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn btn-small">Contact US</a>
-    </nav>
-  </div>
-</header>-->
-
 <div id="header"></div>
 
 <main class="site-main">
@@ -65,25 +44,41 @@
 
     <div class="card">
       <h2 class="h3">Send a message</h2>
-      <form id="contact-form" class="form" novalidate>
-        <label>
-          Name
-          <input type="text" name="name" autocomplete="name" required>
-        </label>
+      <form
+  id="contact-form"
+  class="form"
+  action="https://formspree.io/f/xwvegrll"
+  method="POST"
+>
+  <!-- Email subject -->
+  <input type="hidden" name="_subject" value="New website enquiry">
 
-        <label>
-          Email
-          <input type="email" name="email" autocomplete="email" required>
-        </label>
+  <!-- Honeypot (spam protection) -->
+  <label class="sr-only">
+    Do not fill this in
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+  </label>
 
-        <label>
-          Message
-          <textarea name="message" rows="6" required></textarea>
-        </label>
+  <label>
+    Name
+    <input type="text" name="name" autocomplete="name" required>
+  </label>
 
-        <button class="btn" type="submit">Send</button>
-        <p class="muted small" id="form-status" role="status" aria-live="polite"></p>
-      </form>
+  <label>
+    Email
+    <input type="email" name="email" autocomplete="email" required>
+  </label>
+
+  <label>
+    Message
+    <textarea name="message" rows="6" required></textarea>
+  </label>
+
+  <button class="btn" type="submit">Send</button>
+
+  <p class="muted small" id="form-status" role="status" aria-live="polite"></p>
+</form>
+
 
       <p class="muted small">Need to get the email sending working, currently it is working</p>
     </div>
@@ -94,7 +89,7 @@
     <h2>Find us</h2>
   <div class="map-wrap">
   <iframe
-    src="https://www.google.com/maps?q=London,+UK&z=14&output=embed"
+    src="https://www.google.com/maps?q=Office+312B,+82+King+St,+Manchester+M2+4WQ&z=17&output=embed"
     width="100%"
     height="360"
     style="border:0;"
@@ -102,36 +97,25 @@
     referrerpolicy="no-referrer-when-downgrade"
     allowfullscreen>
   </iframe>
+  <div class="map-actions">
+  <a
+    href="https://www.google.com/maps/dir/?api=1&destination=Office+312B,+82+King+St,+Manchester+M2+4WQ"
+    target="_blank"
+    rel="noopener"
+    class="btn btn-small"
+  >
+    Get directions
+  </a>
+</div>
+
 </div>
 </div>
 </section>
 </main>
 
-
-
+<!--Footer-->
 <div id="footer"></div>
-
 <script src="js/components.js" defer></script>
 
-<!--<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <strong>Consequat Sunt Cillum</strong>
-      <p class="muted">Dolore esse exercitation commodo do ad laborum aliquip enim in eu.</p>
-    </div>
-
-    <div class="footer-links" aria-label="Laboris reprehenderit elit nisi amet in.">
-      <a href="services.html">Commodo Sed</a>
-      <a href="classes.html">In</a>
-      <a href="about.html">Deserunt</a>
-      <a href="contact.html">Sunt Aliqua</a>
-    </div>
-
-    <div class="muted small">
-      <p>© 2025 Magna Aliquip Laborum. Occaecat pariatur cillum laboris magna anim.</p>
-      <p><a href="#">Tempor Adipiscing</a> · <a href="#">Ut</a></p>
-    </div>
-  </div>
-</footer>-->
 </body>
 </html>

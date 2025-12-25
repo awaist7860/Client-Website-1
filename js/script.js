@@ -18,35 +18,32 @@
 })();
 
 /**
- * Contact form: lightweight client-side validation + demo submission
- * NOTE: This does not send emails. Hook into a service (Netlify Forms, Formspree, etc.)
+ * Contact form: Formspree submission
  */
-(function () {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#contact-form");
-  if (!form) return;
+  const status = document.querySelector("#form-status");
+  if (!form || !status) return;
 
-  const statusEl = document.querySelector("#form-status");
-
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    status.textContent = "Sending…";
 
-    const data = new FormData(form);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const message = String(data.get("message") || "").trim();
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      });
 
-    const errors = [];
-    if (!name) errors.push("Please enter your name.");
-    if (!email || !email.includes("@")) errors.push("Please enter a valid email.");
-    if (!message) errors.push("Please enter a message.");
-
-    if (errors.length) {
-      if (statusEl) statusEl.textContent = errors.join(" ");
-      return;
+      if (res.ok) {
+        form.reset();
+        status.textContent = "Message sent ✅ We’ll get back to you soon.";
+      } else {
+        status.textContent = "Something went wrong ❌ Please try again.";
+      }
+    } catch (err) {
+      status.textContent = "Network error ❌ Please try again.";
     }
-
-    // Demo success (replace with real submission)
-    if (statusEl) statusEl.textContent = "Thanks! Your message is ready to send (hook up a form service to deliver it).";
-    form.reset();
   });
-})();
+});
