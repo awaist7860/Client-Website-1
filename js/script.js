@@ -1,7 +1,3 @@
-/* ============================
-   Minimal Site Starter JS
-   ============================ */
-
 /**
  * Mobile nav toggle
  */
@@ -38,12 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (res.ok) {
         form.reset();
-        status.textContent = "Message sent ✅ We’ll get back to you soon.";
+        status.textContent = "Message sent, We’ll get back to you soon.";
       } else {
-        status.textContent = "Something went wrong ❌ Please try again.";
+        status.textContent = "Something went wrong, Please try again.";
       }
     } catch (err) {
-      status.textContent = "Network error ❌ Please try again.";
+      status.textContent = "Network error, Please try again.";
     }
   });
 });

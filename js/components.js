@@ -39,30 +39,31 @@ function initMobileNav() {
     toggleMenu();
   });
 
-  // 🔗 Close after clicking a nav link
+  // Close after clicking a nav link
   nav.addEventListener("click", (e) => {
     const link = e.target.closest("a");
     if (!link) return;
     closeMenu();
   });
 
-  // ❌ Close on outside click
+  // Close on outside click
   document.addEventListener("click", (e) => {
     const clickedInsideHeader = header.contains(e.target);
     if (!clickedInsideHeader) closeMenu();
   });
 
-  // ❌ Close on Escape
+  // Close on Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 
-  // Optional: close when resizing up to desktop
+  // Close when resizing up to desktop
   window.addEventListener("resize", () => {
     if (window.innerWidth > 900) closeMenu();
   });
 }
 
+//Loads the head and footer for each page
 document.addEventListener("DOMContentLoaded", () => {
   loadComponent("#header", "components/header.html", initMobileNav);
   loadComponent("#footer", "components/footer.html");
